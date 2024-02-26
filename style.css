@@ -1,0 +1,136 @@
+@charset "UTF-8";
+body {
+  background: url("https://u.cubeupload.com/Elusive/c9b3085272.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+}
+body * {
+  font-family: "Rubik", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+div.background-opacity🔶 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(0, 0%, 0%, 0.8);
+  z-index: -1;
+}
+
+div.app🔶 {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 0 25rem;
+  transition: all 300ms ease;
+}
+div.app🔶 nav.app-navigation🔶 {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 3rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  cursor: pointer;
+  color: hsl(220, 6%, 30%);
+  transition: all 300ms ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶:hover, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶:hover {
+  color: hsl(222, 5%, 62%);
+  background-color: hsla(0, 0%, 0%, 0.3);
+  padding: 0 1.5rem;
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶:hover span.app-navigation-button-icon🔶, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶:hover span.app-navigation-button-icon🔶 {
+  background-color: var(--theme-accent-color);
+  color: hsl(0, 0%, 0%);
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶.app-navigation-button-active🔶, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶.app-navigation-button-active🔶 {
+  color: var(--theme-accent-color);
+  background-color: hsla(0, 0%, 0%, 0);
+  pointer-events: none;
+  padding: 0 1.5rem;
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶.app-navigation-button-active🔶 span.app-navigation-button-icon🔶, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶.app-navigation-button-active🔶 span.app-navigation-button-icon🔶 {
+  background-color: var(--theme-accent-color);
+  color: hsl(0, 0%, 0%);
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶 span.app-navigation-button-icon🔶, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶 span.app-navigation-button-icon🔶 {
+  height: 1rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  border-radius: 0.25rem;
+  background-color: hsla(220, 6%, 30%, 0.15);
+  color: hsl(220, 6%, 30%);
+  transition: all 300ms ease;
+}
+div.app🔶 nav.app-navigation🔶 div.app-navigation-button-group🔶 {
+  display: flex;
+}
+
+@media (max-width: 113.75rem) {
+  div.app🔶 {
+    padding: 0 22.5rem;
+  }
+}
+@media (max-width: 107.5rem) {
+  div.app🔶 {
+    padding: 0 20rem;
+  }
+}
+@media (max-width: 101.25rem) {
+  div.app🔶 {
+    padding: 0 17.5rem;
+  }
+}
+@media (max-width: 95rem) {
+  div.app🔶 {
+    padding: 0 15rem;
+  }
+}
+@media (max-width: 88.75rem) {
+  div.app🔶 {
+    padding: 0 12.5rem;
+  }
+}
+@media (max-width: 82.5rem) {
+  div.app🔶 {
+    padding: 0 10rem;
+  }
+}
+@media (max-width: 76.25rem) {
+  div.app🔶 {
+    padding: 0 7.5rem;
+  }
+}
+@media (max-width: 70rem) {
+  div.app🔶 {
+    padding: 0 5rem;
+  }
+}
+@media (max-width: 63.75rem) {
+  div.app🔶 {
+    padding: 0 2.5rem;
+  }
+}
+@media (max-width: 57.5rem) {
+  div.app🔶 {
+    padding: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
