@@ -9,28 +9,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <script src="https://discord.com/api/guilds/1209222100347256893/widget.json" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body onload="websiteLoaded()">
     <div class="background-opacity🔶"></div>
-
     <div class="app🔶">
       <nav class="app-navigation🔶">
         <div class="app-navigation-button-group🔶">
-          <button class="app-navigation-button🔶 app-navigation-button-active🔶" onclick="changeTab(event, 'Home🔶')" style="--theme-accent-color: hsl(187, 66%, 59%)">
+          <button class="app-navigation-button🔶 app-navigation-button-active🔶" onclick="changeTab(event, 'Home🔶'); location.reload()" style="--theme-accent-color: 187, 66%, 59%">
             <span class="app-navigation-button-icon🔶">
               <i class="ri-home-2-fill"></i>
             </span>
             <span>Home</span>
           </button>
-          <button class="app-navigation-button🔶" onclick="changeTab(event, 'VALORANT🔶')" style="--theme-accent-color: hsl(355, 100%, 64%)">
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'VALORANT🔶')" style="--theme-accent-color: 355, 100%, 64%" id="valorant">
             <span class="app-navigation-button-icon🔶">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none"><path fill="currentColor" d="M3.118 4.236 12.29 15.89c.035.044.004.109-.051.109H7.72a.065.065 0 0 1-.051-.025l-4.654-5.846A.068.068 0 0 1 3 10.087v-5.81c0-.063.079-.09.118-.041Zm7.761 7.684 6.004-7.617c.039-.05.117-.022.117.042v5.775c0 .016-.005.03-.015.043l-1.484 1.841a.066.066 0 0 1-.051.025h-4.52c-.055 0-.086-.066-.051-.11Z"></path></svg>
             </span>
             <span>VALORANT</span>
           </button>
-          <button class="app-navigation-button🔶" onclick="changeTab(event, 'League-of-Legends🔶')" style="--theme-accent-color: hsl(42, 57%, 50%)">
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'League-of-Legends🔶')" style="--theme-accent-color: 42, 57%, 50%" id="league-of-legends">
             <span class="app-navigation-button-icon🔶">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
                 <path fill="currentColor" d="M6.222 3 7 4.167v11.277L6.222 17h8.569l1.043-3H10.04V3H6.222ZM3.39 10.389A6.6 6.6 0 0 1 6 5.126v2.97a4.59 4.59 0 0 0-.61 2.293c0 .835.222 1.618.61 2.294v2.578l-.14.281a6.599 6.599 0 0 1-2.47-5.153Z"></path>
@@ -39,7 +39,7 @@
             </span>
             <span>League of Legends</span>
           </button>
-          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Counter-Strike-2🔶')" style="--theme-accent-color: hsl(33, 82%, 49%)">
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Counter-Strike-2🔶')" style="--theme-accent-color: 33, 82%, 49%" id="counter-strike">
             <span class="app-navigation-button-icon🔶">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
                 <path
@@ -50,7 +50,7 @@
             </span>
             <span>Counter-Strike 2</span>
           </button>
-          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Rainbow-Six-Siege🔶')" style="--theme-accent-color: hsl(223, 10%, 41%)">
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Rainbow-Six-Siege🔶')" style="--theme-accent-color: 223, 10%, 41%" id="rainbow-six-siege">
             <span class="app-navigation-button-icon🔶">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 225.315 465.853">
                 <path
@@ -65,21 +65,49 @@
             <span>Rainbow Six Siege</span>
           </button>
         </div>
-        <button class="app-navigation-button🔶" onclick="changeTab(event, 'Discord🔶')" style="--theme-accent-color: hsl(227, 59%, 65%)">
+        <button class="app-navigation-button🔶" onclick="changeTab(event, 'Discord🔶')" style="--theme-accent-color: 227, 59%, 65%">
           <span class="app-navigation-button-icon🔶">
             <i class="ri-discord-fill"></i>
           </span>
           <span>Discord</span>
         </button>
       </nav>
-      <div class="app-section🔶" id="Home🔶"></div>
+      <div class="app-section🔶" id="Home🔶">
+        <div class="box-layout🔶">
+          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/cstF3'); --theme-accent-color: 355, 100%, 64%" data-tilt data-tilt-glare>
+            <div class="game-name🔶">VALORANT</div>
+            <div class="action-container🔶">
+              <button class="action-container-button🔶" onclick="document.querySelector('#valorant').click()">Lineups</button>
+              <button class="action-container-button🔶" onclick="document.querySelector('#valorant').click()">Weapons</button>
+              <button class="action-container-button🔶" onclick="document.querySelector('#valorant').click()">Tips & tricks</button>
+            </div>
+          </div>
+          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/jnFM5'); --theme-accent-color: 42, 57%, 50%" data-tilt data-tilt-glare>
+            <div class="game-name🔶">League of Legends</div>
+            <div class="action-container🔶">
+              <button class="action-container-button🔶" onclick="document.querySelector('#league-of-legends').click()">Builds</button>
+              <button class="action-container-button🔶" onclick="document.querySelector('#league-of-legends').click()">Combos</button>
+              <button class="action-container-button🔶" onclick="document.querySelector('#league-of-legends').click()">Tips & tricks</button>
+            </div>
+          </div>
+          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/mNQT6'); --theme-accent-color: 33, 82%, 49%" data-tilt data-tilt-glare>
+            <div class="coming-soon🔶">Coming soon...</div>
+          </div>
+          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/dgixP'); --theme-accent-color: 223, 10%, 41%" data-tilt data-tilt-glare>
+            <div class="coming-soon🔶">Coming soon...</div>
+          </div>
+        </div>
+      </div>
       <div class="app-section🔶" id="VALORANT🔶" style="display: none"></div>
       <div class="app-section🔶" id="League-of-Legends🔶" style="display: none"></div>
       <div class="app-section🔶" id="Counter-Strike-2🔶" style="display: none"></div>
       <div class="app-section🔶" id="Rainbow-Six-Siege🔶" style="display: none"></div>
-      <div class="app-section🔶" id="Discord🔶" style="display: none; justify-content: center">
+      <div class="app-section🔶" id="Discord🔶" style="display: none; align-items: center">
         <iframe src="https://discord.com/widget?id=1209222100347256893&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       </div>
+    </div>
+    <div class="loading-screen🔶">
+      <div class="loader🔶"></div>
     </div>
   </body>
 </html>
