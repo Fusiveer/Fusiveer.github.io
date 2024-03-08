@@ -3,6 +3,7 @@ body {
   background: url("https://u.cubeupload.com/Elusive/c9b3085272.jpg") no-repeat center center fixed;
   background-size: cover;
   margin: 0;
+  overflow: hidden;
 }
 body * {
   font-family: "Rubik", sans-serif;
@@ -52,10 +53,11 @@ div.loading-screen🔶 div.loader🔶 {
   }
 }
 div.app🔶 {
-  display: none;
+  visibility: hidden;
+  display: flex;
   flex-direction: column;
   gap: 5rem;
-  padding: 0 25rem;
+  padding: 0 22.5rem;
   transition: all 300ms ease;
 }
 div.app🔶 .app-section🔶 {
@@ -78,6 +80,7 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 {
 }
 div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶:hover {
   box-shadow: 0 0 1.25rem 0 hsla(var(--theme-accent-color), 0.5);
+  z-index: 1;
 }
 div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 {
   position: absolute;
@@ -96,8 +99,8 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container
   border: none;
   outline: none;
   background-color: hsla(0, 0%, 0%, 0.6);
-  -webkit-backdrop-filter: blur(0.125rem);
-          backdrop-filter: blur(0.125rem);
+  -webkit-backdrop-filter: blur(0.1875rem);
+          backdrop-filter: blur(0.1875rem);
   color: hsl(220, 6%, 30%);
   transition: all 300ms ease;
   cursor: pointer;
@@ -114,8 +117,8 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.coming-soon🔶 
   right: 0;
   bottom: 0;
   background-color: hsla(0, 0%, 0%, 0.6);
-  -webkit-backdrop-filter: blur(0.125rem);
-          backdrop-filter: blur(0.125rem);
+  -webkit-backdrop-filter: blur(0.1875rem);
+          backdrop-filter: blur(0.1875rem);
   color: hsl(var(--theme-accent-color));
   border-radius: 0.5rem;
   pointer-events: none;
@@ -130,13 +133,14 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶 {
   width: 100%;
   background-color: hsla(0, 0%, 0%, 0.6);
   color: hsl(var(--theme-accent-color));
-  -webkit-backdrop-filter: blur(0.125rem);
-          backdrop-filter: blur(0.125rem);
+  -webkit-backdrop-filter: blur(0.1875rem);
+          backdrop-filter: blur(0.1875rem);
   border-radius: 0.5rem 0.5rem 0 0;
   display: grid;
   place-content: center;
   cursor: pointer;
   transition: all 300ms ease;
+  z-index: 2;
 }
 div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶:hover {
   background-color: hsla(0, 0%, 0%, 0.3);
@@ -199,51 +203,46 @@ div.app🔶 nav.app-navigation🔶 div.app-navigation-button-group🔶 {
 
 @media (max-width: 113.75rem) {
   div.app🔶 {
-    padding: 0 22.5rem;
+    padding: 0 20rem;
   }
 }
 @media (max-width: 107.5rem) {
   div.app🔶 {
-    padding: 0 20rem;
+    padding: 0 17.5rem;
   }
 }
 @media (max-width: 101.25rem) {
   div.app🔶 {
-    padding: 0 17.5rem;
+    padding: 0 15rem;
   }
 }
 @media (max-width: 95rem) {
   div.app🔶 {
-    padding: 0 15rem;
+    padding: 0 12.5rem;
   }
 }
 @media (max-width: 88.75rem) {
   div.app🔶 {
-    padding: 0 12.5rem;
+    padding: 0 10rem;
   }
 }
 @media (max-width: 82.5rem) {
   div.app🔶 {
-    padding: 0 10rem;
+    padding: 0 7.5rem;
   }
 }
 @media (max-width: 76.25rem) {
   div.app🔶 {
-    padding: 0 7.5rem;
+    padding: 0 5rem;
   }
 }
 @media (max-width: 70rem) {
   div.app🔶 {
-    padding: 0 5rem;
+    padding: 0 2.5rem;
   }
 }
 @media (max-width: 63.75rem) {
   div.app🔶 {
-    padding: 0 2.5rem;
-  }
-}
-@media (max-width: 57.5rem) {
-  div.app🔶 {
-    padding: 0;
+    padding: 0rem;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -7,7 +7,9 @@ function changeTab(evt, cityName) {
 
 function websiteLoaded() {
   $(".loading-screen🔶").hide();
-  $(".app🔶").css("display", "flex");
+  $(".app🔶").css("visibility", "visible");
+  $("body").css("overflow", "auto");
+  $("body").css("overflowY", "scroll");
 }
 
 var VanillaTilt = (function () {
@@ -357,7 +359,7 @@ var VanillaTilt = (function () {
         top: "50%",
         left: "50%",
         "pointer-events": "none",
-        "background-image": `linear-gradient(0deg, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.6) 100%)`,
+        "background-image": `linear-gradient(0deg, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.7) 100%)`,
         transform: "rotate(180deg) translate(-50%, -50%)",
         "transform-origin": "0% 0%",
         opacity: "0",

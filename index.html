@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://shorturl.at/juMSW" />
     <script src="https://discord.com/api/guilds/1209222100347256893/widget.json" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="script.js" defer></script>
@@ -39,7 +40,7 @@
             </span>
             <span>League of Legends</span>
           </button>
-          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Counter-Strike-2🔶')" style="--theme-accent-color: 33, 82%, 49%" id="counter-strike">
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Counter-Strike-2🔶')" style="--theme-accent-color: 33, 82%, 49%" id="counter-strike-2">
             <span class="app-navigation-button-icon🔶">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none">
                 <path
@@ -64,6 +65,10 @@
             </span>
             <span>Rainbow Six Siege</span>
           </button>
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Genshin-Impact🔶')" style="--theme-accent-color: 293, 19%, 82%" id="rainbow-six-siege">
+            <span class="app-navigation-button-icon🔶"><i class="ri-sword-fill"></i></span>
+            <span>Genshin Impact</span>
+          </button>
         </div>
         <button class="app-navigation-button🔶" onclick="changeTab(event, 'Discord🔶')" style="--theme-accent-color: 227, 59%, 65%">
           <span class="app-navigation-button-icon🔶">
@@ -75,7 +80,7 @@
       <div class="app-section🔶" id="Home🔶">
         <div class="box-layout🔶">
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/cstF3'); --theme-accent-color: 355, 100%, 64%" data-tilt data-tilt-glare>
-            <div class="game-name🔶">VALORANT</div>
+            <div class="game-name🔶" onclick="document.querySelector('#valorant').click()">VALORANT</div>
             <div class="action-container🔶">
               <button class="action-container-button🔶" onclick="document.querySelector('#valorant').click()">Lineups</button>
               <button class="action-container-button🔶" onclick="document.querySelector('#valorant').click()">Weapons</button>
@@ -83,7 +88,7 @@
             </div>
           </div>
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/jnFM5'); --theme-accent-color: 42, 57%, 50%" data-tilt data-tilt-glare>
-            <div class="game-name🔶">League of Legends</div>
+            <div class="game-name🔶" onclick="document.querySelector('#league-of-legends').click()">League of Legends</div>
             <div class="action-container🔶">
               <button class="action-container-button🔶" onclick="document.querySelector('#league-of-legends').click()">Builds</button>
               <button class="action-container-button🔶" onclick="document.querySelector('#league-of-legends').click()">Combos</button>
@@ -91,9 +96,15 @@
             </div>
           </div>
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/mNQT6'); --theme-accent-color: 33, 82%, 49%" data-tilt data-tilt-glare>
+            <div class="game-name🔶" onclick="document.querySelector('#counter-strike-2').click()">Counter-Strike 2</div>
             <div class="coming-soon🔶">Coming soon...</div>
           </div>
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/dgixP'); --theme-accent-color: 223, 10%, 41%" data-tilt data-tilt-glare>
+            <div class="game-name🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Rainbow Six Siege</div>
+            <div class="coming-soon🔶">Coming soon...</div>
+          </div>
+          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/kzIRV'); --theme-accent-color: 293, 19%, 82%" data-tilt data-tilt-glare>
+            <div class="game-name🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Genshin Impact</div>
             <div class="coming-soon🔶">Coming soon...</div>
           </div>
         </div>
@@ -102,6 +113,7 @@
       <div class="app-section🔶" id="League-of-Legends🔶" style="display: none"></div>
       <div class="app-section🔶" id="Counter-Strike-2🔶" style="display: none"></div>
       <div class="app-section🔶" id="Rainbow-Six-Siege🔶" style="display: none"></div>
+      <div class="app-section🔶" id="Genshin-Impact🔶" style="display: none"></div>
       <div class="app-section🔶" id="Discord🔶" style="display: none; align-items: center">
         <iframe src="https://discord.com/widget?id=1209222100347256893&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       </div>
