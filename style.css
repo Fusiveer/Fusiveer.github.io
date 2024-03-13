@@ -4,12 +4,18 @@ body {
   background-size: cover;
   margin: 0;
   overflow: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 body * {
-  font-family: "Rubik", sans-serif;
+  font-family: "Karla", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 div.background-opacity🔶 {
@@ -52,6 +58,31 @@ div.loading-screen🔶 div.loader🔶 {
     transform: scale(0) rotate(360deg);
   }
 }
+div.counters-display🔶 {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem 0 0 0;
+  font-weight: 500;
+  z-index: 1;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  color: hsl(220, 6%, 30%);
+}
+
+div.wifi-display🔶 {
+  position: fixed;
+  bottom: 0;
+  padding: 0.5rem 2rem;
+  font-size: 0.9rem;
+  border-radius: 0 0.5rem 0 0;
+  font-weight: 500;
+  z-index: 1;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  color: hsl(220, 6%, 30%);
+}
+
 div.app🔶 {
   visibility: hidden;
   display: flex;
@@ -60,17 +91,58 @@ div.app🔶 {
   padding: 0 22.5rem;
   transition: all 300ms ease;
 }
-div.app🔶 .app-section🔶 {
+div.app🔶 div.to-top-button🔶 {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  right: 3.125rem;
+  bottom: 6.25rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  cursor: pointer;
+  color: hsl(220, 6%, 30%);
+  z-index: 2;
+  border-radius: 0.5rem;
+  transition: all 300ms ease;
+}
+div.app🔶 div.to-top-button🔶:hover {
+  color: hsl(222, 5%, 62%);
+  background-color: hsla(0, 0%, 0%, 0.3);
+}
+div.app🔶 div.to-top-button🔶.show {
+  opacity: 1;
+  visibility: visible;
+}
+div.app🔶 h1.h1🔶 {
+  color: hsl(0, 0%, 83%);
+  text-align: center;
+}
+div.app🔶 h1.h1🔶 span.h1-gradient🔶 {
+  background: linear-gradient(to bottom right, hsl(184, 17%, 81%) 0%, hsl(177, 38%, 29%) 50%, hsl(230, 7%, 18%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+div.app🔶 p.p🔶 {
+  color: hsl(210, 16%, 64%);
+  text-align: center;
+}
+div.app🔶 div.app-section🔶 {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 {
+div.app🔶 div.app-section🔶 div.app-push-content-down🔶 {
+  margin-bottom: 5rem;
+}
+div.app🔶 div.app-section🔶 div.box-layout🔶 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   width: 100%;
   gap: 2rem;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 {
   background-image: radial-gradient(100% 150% at 50% -35%, hsla(223, 20%, 7%, 0) 0%, hsla(223, 20%, 7%, 0.75) 100%), linear-gradient(180deg, hsla(223, 20%, 7%, 0) -35%, hsla(223, 20%, 7%, 0.375) 100%), linear-gradient(180deg, hsla(223, 20%, 7%, 0.375) -35%, hsla(223, 20%, 7%, 0) 100%), var(--box-game-theme);
   background-position: center;
   background-size: cover;
@@ -78,11 +150,11 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 {
   height: 25rem;
   box-shadow: none;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶:hover {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶:hover {
   box-shadow: 0 0 1.25rem 0 hsla(var(--theme-accent-color), 0.5);
   z-index: 1;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 {
   position: absolute;
   left: 0.625rem;
   bottom: 0.625rem;
@@ -95,7 +167,7 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container
   border-radius: 0 0 0 0.5rem;
   overflow: hidden;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 button.action-container-button🔶 {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 button.action-container-button🔶 {
   border: none;
   outline: none;
   background-color: hsla(0, 0%, 0%, 0.6);
@@ -106,11 +178,11 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container
   cursor: pointer;
   flex: 1 0 0;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 button.action-container-button🔶:hover {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 div.action-container🔶 button.action-container-button🔶:hover {
   color: hsl(222, 5%, 62%);
   background-color: hsla(0, 0%, 0%, 0.3);
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.coming-soon🔶 {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 div.coming-soon🔶 {
   position: absolute;
   top: 0;
   left: 0;
@@ -126,7 +198,7 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.coming-soon🔶 
   display: grid;
   place-content: center;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶 {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶 {
   position: absolute;
   top: 0;
   height: 2rem;
@@ -142,7 +214,7 @@ div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶 {
   transition: all 300ms ease;
   z-index: 2;
 }
-div.app🔶 .app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶:hover {
+div.app🔶 div.app-section🔶 div.box-layout🔶 div.box🔶 div.game-name🔶:hover {
   background-color: hsla(0, 0%, 0%, 0.3);
 }
 div.app🔶 nav.app-navigation🔶 {
@@ -167,6 +239,13 @@ div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶, div.app🔶
   transition: all 300ms ease;
   text-decoration: none;
   font-weight: 500;
+  overflow: hidden;
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶#genshin-impact, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶#genshin-impact {
+  border-radius: 0 0 0.5rem 0;
+}
+div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶#discord, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶#discord {
+  border-radius: 0 0 0 0.5rem;
 }
 div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶:hover, div.app🔶 nav.app-navigation🔶 a.app-navigation-button🔶:hover {
   color: hsl(222, 5%, 62%);
@@ -200,6 +279,22 @@ div.app🔶 nav.app-navigation🔶 button.app-navigation-button🔶 span.app-nav
 div.app🔶 nav.app-navigation🔶 div.app-navigation-button-group🔶 {
   display: flex;
 }
+div.app🔶 div.app-footer🔶 {
+  background-color: hsla(0, 0%, 0%, 0.6);
+  color: hsla(240, 4%, 95%, 0.3);
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1rem;
+  transition: all 300ms ease;
+}
+div.app🔶 div.app-footer🔶 a.app-footer-icons🔶 {
+  font-size: 1rem;
+  text-decoration: none;
+  color: hsla(240, 4%, 95%, 0.3);
+}
 
 @media (max-width: 113.75rem) {
   div.app🔶 {
@@ -220,6 +315,9 @@ div.app🔶 nav.app-navigation🔶 div.app-navigation-button-group🔶 {
   div.app🔶 {
     padding: 0 12.5rem;
   }
+  div.counters-display🔶 {
+    display: none;
+  }
 }
 @media (max-width: 88.75rem) {
   div.app🔶 {
@@ -239,6 +337,9 @@ div.app🔶 nav.app-navigation🔶 div.app-navigation-button-group🔶 {
 @media (max-width: 70rem) {
   div.app🔶 {
     padding: 0 2.5rem;
+  }
+  div.wifi-display🔶 {
+    display: none;
   }
 }
 @media (max-width: 63.75rem) {

@@ -1,3 +1,68 @@
+var statsDisplay = document.getElementById("stats");
+var framesThisSecond = 0;
+var lastCalledTime = performance.now();
+var pingTime = "";
+
+function updateStats() {
+  var delta = (performance.now() - lastCalledTime) / 1000;
+  var fps = framesThisSecond / delta;
+
+  lastCalledTime = performance.now();
+  statsDisplay.innerText = "Ping time:" + " " + pingTime + "ms" + " " + "Fps:" + " " + fps.toFixed(0);
+  framesThisSecond = 0;
+
+  if (pingTime <= 4) {
+    $("#wifi-display-4").css("display", "block");
+    $("#wifi-display-1").css("display", "none");
+    $("#wifi-display-2").css("display", "none");
+    $("#wifi-display-3").css("display", "none");
+  }
+
+  if (pingTime > 4 && pingTime <= 6) {
+    $("#wifi-display-3").css("display", "block");
+    $("#wifi-display-1").css("display", "none");
+    $("#wifi-display-2").css("display", "none");
+    $("#wifi-display-4").css("display", "none");
+  }
+
+  if (pingTime > 6 && pingTime <= 9) {
+    $("#wifi-display-2").css("display", "block");
+    $("#wifi-display-1").css("display", "none");
+    $("#wifi-display-3").css("display", "none");
+    $("#wifi-display-4").css("display", "none");
+  }
+
+  if (pingTime > 9) {
+    $("#wifi-display-1").css("display", "block");
+    $("#wifi-display-2").css("display", "none");
+    $("#wifi-display-3").css("display", "none");
+    $("#wifi-display-4").css("display", "none");
+  }
+}
+
+function countFrame() {
+  framesThisSecond++;
+  requestAnimationFrame(countFrame);
+}
+
+function measurePingTime() {
+  var startTime = performance.now();
+
+  fetch(window.location.href, { method: "HEAD" })
+    .then((response) => {
+      var endTime = performance.now();
+      pingTime = (endTime - startTime).toFixed(0);
+    })
+    .catch((error) => {
+      console.error("Error fetching resource:", error);
+      pingTime = "-";
+    });
+}
+
+countFrame();
+setInterval(measurePingTime, 1000);
+setInterval(updateStats, 2000);
+
 function changeTab(evt, cityName) {
   $(".app-section🔶").hide();
   $(".app-navigation-button🔶").removeClass("app-navigation-button-active🔶");
@@ -11,6 +76,19 @@ function websiteLoaded() {
   $("body").css("overflow", "auto");
   $("body").css("overflowY", "scroll");
 }
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() > 300) {
+    $("#to-top-button").addClass("show");
+  } else {
+    $("#to-top-button").removeClass("show");
+  }
+});
+
+$("#to-top-button").on("click", function (e) {
+  e.preventDefault();
+  $("html, body").animate({ scrollTop: 0 }, "300");
+});
 
 var VanillaTilt = (function () {
   "use strict";

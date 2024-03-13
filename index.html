@@ -3,20 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fusiveer</title>
+    <title>BlackIce</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="https://shorturl.at/juMSW" />
-    <script src="https://discord.com/api/guilds/1209222100347256893/widget.json" defer></script>
+    <script src="https://discord.com/api/guilds/1217412136066744351/widget.json" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <div class="background-opacity🔶"></div>
     <div class="app🔶">
+      <div class="to-top-button🔶" id="to-top-button">
+        <i class="ri-arrow-up-s-line"></i>
+      </div>
+
       <nav class="app-navigation🔶">
         <div class="app-navigation-button-group🔶">
           <button class="app-navigation-button🔶 app-navigation-button-active🔶" onclick="changeTab(event, 'Home🔶'); location.reload()" style="--theme-accent-color: 187, 66%, 59%">
@@ -65,12 +69,12 @@
             </span>
             <span>Rainbow Six Siege</span>
           </button>
-          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Genshin-Impact🔶')" style="--theme-accent-color: 293, 19%, 82%" id="rainbow-six-siege">
+          <button class="app-navigation-button🔶" onclick="changeTab(event, 'Genshin-Impact🔶')" style="--theme-accent-color: 293, 19%, 82%" id="genshin-impact">
             <span class="app-navigation-button-icon🔶"><i class="ri-sword-fill"></i></span>
             <span>Genshin Impact</span>
           </button>
         </div>
-        <button class="app-navigation-button🔶" onclick="changeTab(event, 'Discord🔶')" style="--theme-accent-color: 227, 59%, 65%">
+        <button class="app-navigation-button🔶" onclick="changeTab(event, 'Discord🔶')" style="--theme-accent-color: 227, 59%, 65%" id="discord">
           <span class="app-navigation-button-icon🔶">
             <i class="ri-discord-fill"></i>
           </span>
@@ -78,6 +82,10 @@
         </button>
       </nav>
       <div class="app-section🔶" id="Home🔶">
+        <span>
+          <h1 class="h1🔶">A user-friendly site with proven classes and loadouts</h1>
+          <p class="p🔶">BlackIce is the ultimate tool to assist you in creating top-tier weapon and player builds.</p>
+        </span>
         <div class="box-layout🔶">
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/cstF3'); --theme-accent-color: 355, 100%, 64%" data-tilt data-tilt-glare>
             <div class="game-name🔶" onclick="document.querySelector('#valorant').click()">VALORANT</div>
@@ -95,16 +103,20 @@
               <button class="action-container-button🔶" onclick="document.querySelector('#league-of-legends').click()">Tips & tricks</button>
             </div>
           </div>
+          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/ejquO'); --theme-accent-color: 223, 10%, 41%" data-tilt data-tilt-glare>
+            <div class="game-name🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Rainbow Six Siege</div>
+            <div class="action-container🔶">
+              <button class="action-container-button🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Builds</button>
+              <button class="action-container-button🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Site setups</button>
+              <button class="action-container-button🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Tips & tricks</button>
+            </div>
+          </div>
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/mNQT6'); --theme-accent-color: 33, 82%, 49%" data-tilt data-tilt-glare>
             <div class="game-name🔶" onclick="document.querySelector('#counter-strike-2').click()">Counter-Strike 2</div>
             <div class="coming-soon🔶">Coming soon...</div>
           </div>
-          <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/dgixP'); --theme-accent-color: 223, 10%, 41%" data-tilt data-tilt-glare>
-            <div class="game-name🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Rainbow Six Siege</div>
-            <div class="coming-soon🔶">Coming soon...</div>
-          </div>
           <div class="box🔶" style="--box-game-theme: url('https://shorturl.at/kzIRV'); --theme-accent-color: 293, 19%, 82%" data-tilt data-tilt-glare>
-            <div class="game-name🔶" onclick="document.querySelector('#rainbow-six-siege').click()">Genshin Impact</div>
+            <div class="game-name🔶" onclick="document.querySelector('#genshin-impact').click()">Genshin Impact</div>
             <div class="coming-soon🔶">Coming soon...</div>
           </div>
         </div>
@@ -115,14 +127,32 @@
       <div class="app-section🔶" id="Rainbow-Six-Siege🔶" style="display: none"></div>
       <div class="app-section🔶" id="Genshin-Impact🔶" style="display: none"></div>
       <div class="app-section🔶" id="Discord🔶" style="display: none; align-items: center">
-        <iframe src="https://discord.com/widget?id=1209222100347256893&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <iframe src="https://discord.com/widget?id=1217412136066744351&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+      </div>
+
+      <div class="app-footer🔶">
+        <span>Copyright © 2024 Fusiveer. All rights reserved.</span>
+        <span>
+          <a href="https://discord.gg/DhygnpMGC3" target="_blank" class="app-footer-icons🔶">
+            <i class="ri-discord-fill"></i>
+          </a>
+        </span>
       </div>
     </div>
+    <div class="counters-display🔶">
+      <span id="stats">Ping: ms Fps:</span>
+    </div>
+    <div class="wifi-display🔶">
+      <i class="ri-signal-wifi-1-fill" style="display: none" id="wifi-display-1"></i>
+      <i class="ri-signal-wifi-2-fill" style="display: none" id="wifi-display-2"></i>
+      <i class="ri-signal-wifi-3-fill" style="display: none" id="wifi-display-3"></i>
+      <i class="ri-signal-wifi-fill" style="display: none" id="wifi-display-4"></i>
+    </div>
     <div class="loading-screen🔶">
-      <div style="display: grid; place-content: center">
-            <span style="color: #fff">The website is currently under construction.</span>
-      <div class="loader🔶"></div>
-        </div>
+      <span style="display: flex; flex-direction: column; align-items: center">
+        <span style="color: white">Our website is currently under construction.</span>
+        <div class="loader🔶"></div>
+      </span>
     </div>
   </body>
 </html>
